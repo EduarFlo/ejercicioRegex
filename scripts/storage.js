@@ -1,5 +1,5 @@
 var nombre = localStorage['username'];
-var correoE = localStorage['email'];
+var controlN = localStorage['noControl'];
 var codigo = localStorage['postalCode'];
 var fecha = localStorage['date'];
 
@@ -10,6 +10,6 @@ var p4 = document.getElementById('date1').value;
 
 
 p1.innerHTML= nombre;
-p2.innerHTML= correoE;
+p2.innerHTML= controlN;
 p3.innerHTML= codigo;
 p4.innerHTML= fecha;
