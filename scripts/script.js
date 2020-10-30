@@ -20,7 +20,7 @@ function checkInputs() {
 		return false;
 	} else {
 		setSuccessFor(username);
-		localStorage["noContro"] = noControl;
+		localStorage["username"] = username;
 	}
 	
 	if(controlValue === '') {
