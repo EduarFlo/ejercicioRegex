@@ -3,15 +3,13 @@ var correoE = localStorage['email'];
 var codigo = localStorage['postalCode'];
 var fecha = localStorage['date'];
 
+var p1 = document.getElementById('nombre').value;
+var p2 = document.getElementById('control').value
+var p3 = document.getElementById('code1').value;
+var p4 = document.getElementById('date1').value;
 
-var p1 = document.getElementById('code1').nodeValue;
-var p2 = document.getElementById('date1').nodeValue;
 
-p1.innerHTML= codigo;
-p2.innerHTML= fecha;
-
-if (condition) {
-  
-} else {
-  
-}
+p1.innerHTML= nombre;
+p2.innerHTML= correoE;
+p3.innerHTML= codigo;
+p4.innerHTML= fecha;
