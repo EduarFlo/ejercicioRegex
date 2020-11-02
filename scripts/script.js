@@ -1,11 +1,12 @@
 const form = document.getElementById('form');
+
 const username = document.getElementById('username');
 const noControl = document.getElementById('noControl');
 const postalCode = document.getElementById('postalCode');
 const date= document.getElementById('date');
 
 const postalRegex = /^77[0|9][0-9][0-9]/;
-const dateRegex = /^(?:(?:31(\/|de|\.)(?:0?[13578]|1[02]|(?:enero|febrero|marzo|julio|agosto|noviembre|diciembre)))\1|(?:(?:29|30)(\/|de|\.)(?:0?[1,3-9]|1[0-2]|(?:Enero|Marzo|Abril|Mayo|Junio|Julio|Agosto|Septiembre|Octubre|Noviembre|Diciembre))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|de|\.)(?:(?:0?[1-9]|(?:ENERO|FFEBRERO|MARZO|ABRIL|MAYO|JNIO|JULIO|AGOSTO|SEPTIEMBRE|OCTUBRE|NOVIEMBRE|DICIEMBRE))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
+const dateRegex = /^(?:(?:31(\/|de|\.)(?:0?[13578]|1[02]|(?:enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)))\1|(?:(?:29|30)(\/|de|\.)(?:0?[1,3-9]|1[0-2]|(?:Enero|Marzo|Abril|Mayo|Junio|Julio|Agosto|Septiembre|Octubre|Noviembre|Diciembre))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|de|\.)(?:(?:0?[1-9]|(?:ENERO|FFEBRERO|MARZO|ABRIL|MAYO|JNIO|JULIO|AGOSTO|SEPTIEMBRE|OCTUBRE|NOVIEMBRE|DICIEMBRE))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/;
 
 
 function checkInputs() {
@@ -20,7 +21,7 @@ function checkInputs() {
 		return false;
 	} else {
 		setSuccessFor(username);
-		localStorage["username"] = username;
+		localStorage["username"] = usernameValue;
 	}
 	
 	if(controlValue === '') {
@@ -28,7 +29,7 @@ function checkInputs() {
 		return false;
 	} else {
 		setSuccessFor(noControl);
-		localStorage["noContro"] = noControl;
+		localStorage["control"] = controlValue;
 	}
 	
 	if(postalCodeValue === '' || postalRegex.test(postalCodeValue) == false) {
@@ -37,7 +38,7 @@ function checkInputs() {
 	} else {
 
 		setSuccessFor(postalCode);
-		localStorage["postalCode"]= postalCode;
+		localStorage["postal"]= postalCodeValue;
 	}
 	
 	if(dateValue === '' || dateRegex.test(dateValue) == false) {
@@ -46,7 +47,7 @@ function checkInputs() {
 	} 
 		else{
 		setSuccessFor(date);
-		localStorage["date"]= date;
+		localStorage["date"]= dateValue;
 	}
 }
 
